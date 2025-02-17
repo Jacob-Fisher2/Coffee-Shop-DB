@@ -1,0 +1,6 @@
+coffee_id, shop_id, supplier_id, coffee_name, price_per_pound
+01, 01, 1000, Blue Moon, 8.00
+02, 03, 1001, La Magnolia, 6.95
+03, 02, 1001, Decaf Ethiopian, 8.50
+04, 04, 1002, Oberon, 6.35
+05, 01, 1001, Peaberry, 7.25
