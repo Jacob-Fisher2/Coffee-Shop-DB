@@ -32,9 +32,9 @@ CREATE TABLE coffee (
 
 CREATE TABLE supplier (
 	supplier_id			INT UNSIGNED,
-	company_name		VARCHAR(50),
+	company_name			VARCHAR(50),
 	country				VARCHAR(30),
-	sales_contact_name	VARCHAR(60),
+	sales_contact_name		VARCHAR(60),
 	email				VARCHAR(50) NOT NULL,
 	PRIMARY KEY	(supplier_id)
 );
