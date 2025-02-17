@@ -1,3 +1,5 @@
+-- Create required tables from Coffee Shop ERD
+
 CREATE TABLE employee (
 	employee_id		INT UNSIGNED,
 	first_name		VARCHAR(30),
@@ -36,3 +38,7 @@ CREATE TABLE supplier (
 	email				VARCHAR(50) NOT NULL,
 	PRIMARY KEY	(supplier_id)
 );
+
+-- Insert Data
+
+-- Create views
