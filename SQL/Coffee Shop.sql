@@ -68,3 +68,31 @@ INSERT INTO supplier (supplier_id, company_name, country, sales_contact_name, em
 (1002, 'Bellwether', 'Costa Rica', 'Wanda Gage', 'wgage@bellwether.com');
 
 -- Create views
+-- View from the employee table of all information with emploeee's first & last name concatenated as employee_full_name
+CREATE VIEW employeeView AS
+SELECT employee_id, concat(first_name, ' ', last_name) AS employee_full_name, hire_date, job_title, shop_id
+FROM employee
+
+SELECT *
+FROM employeeView;
+
+-- Index on coffee table of coffee_name
+CREATE INDEX coffeeIndex 
+ON coffee(coffee_name);
+
+SHOW INDEX
+FROM coffee;
+
+-- A SWF of the coffee table where price_per_pound < 7.00 AND coffee_name starts with 'O'
+SELECT coffee_name, price_per_pound 
+FROM coffee
+WHERE price_per_pound < 7.00 AND coffee_name LIKE 'O%';
+
+-- Joins all 3 tables to include attributes from each table in the output
+SELECT emp.last_name, emp.job_title, cofShop.shop_name, cof.coffee_name
+FROM employee emp
+LEFT JOIN coffeeShop cofShop 
+	ON cofShop.shop_id = emp.shop_id
+      AND emp.shop_id = 03
+JOIN coffee cof 
+	ON cof.shop_id = cofShop.shop_id;
